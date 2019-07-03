@@ -2,6 +2,7 @@ d:\repository\git\blog\src\main\java\com\itshidu\web\service\RegisterService.jav
 d:\repository\git\blog\src\main\java\com\itshidu\web\controller\HomeController.java
 d:\repository\git\blog\src\main\java\com\itshidu\web\util\DateConverter.java
 d:\repository\git\blog\src\main\java\com\itshidu\web\dao\UserDao.java
+d:\repository\git\blog\src\main\java\com\itshidu\web\util\FileDownload.java
 d:\repository\git\blog\src\main\java\com\itshidu\web\controller\UploadController.java
 d:\repository\git\blog\src\main\java\com\itshidu\web\service\AccountService.java
 d:\repository\git\blog\src\main\java\com\itshidu\web\util\DigestHelper.java

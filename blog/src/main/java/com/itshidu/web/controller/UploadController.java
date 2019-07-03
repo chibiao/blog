@@ -7,16 +7,19 @@ import java.util.UUID;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.coobird.thumbnailator.Thumbnails;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.itshidu.web.util.FileDownload;
 import com.itshidu.web.vo.Result;
-
-import net.coobird.thumbnailator.Thumbnails;
 
 
 @Controller
@@ -63,6 +66,18 @@ public class UploadController {
 			e.printStackTrace();
 		}
 		return Result.of(2, "上传失败");
+	}
+	//上传头像的回显功能
+	@ResponseBody
+	@RequestMapping("/store/temp/{filename:.+}")
+	public Object upload(@PathVariable String filename,HttpServletRequest request,HttpServletResponse response) {
+		File file = new File(StoreRootPath,"/store/temp/"+filename);
+		try {
+			FileDownload.forward(request, response, file);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "";
 	}
 	
 }
