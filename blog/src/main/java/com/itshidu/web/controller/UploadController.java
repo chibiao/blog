@@ -32,7 +32,6 @@ public class UploadController {
 		System.out.println("缩放尺寸："+size);
 		System.out.println(StoreRootPath);
 		try {
-			
 			BufferedImage bi = ImageIO.read(file.getInputStream());
 			int w=bi.getWidth();
 			int h=bi.getHeight();
